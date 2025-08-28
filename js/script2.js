@@ -78,6 +78,10 @@ document.getElementById('btn-add-money').addEventListener('click', function (e) 
         return;
     }
 
+    if(amountNumber<=0){
+        alert('Enter a valid amount')
+    }
+
     const totalNewAvaiableBalance = amountNumber + availableBalance;
 
     document.getElementById('available-balance').innerText = totalNewAvaiableBalance;
@@ -104,6 +108,11 @@ document.getElementById('btn-withdraw')
 
         if (totalNewAvaiableBalance < 0) {
             alert('Not Enough Balance');
+            return;
+        }
+
+        if(amount<=0){
+            alert('Enter a valid amount')
             return;
         }
 
